@@ -7,7 +7,7 @@ The program is based on the RISC-V architecture and uses open-source tools to te
 **Name:**  Charan S    
  **College:** Dayananda Sagar College Of Engineering   
 **Email ID:** charanmanu64@gmail.com  
-**GitHub Profile:** [Charan6080(https://github.com/Charan6080?tab=repositories)]
+**GitHub Profile:** [Charan6080}(https://github.com/Charan6080?tab=repositories)
 
 ---------------------------------------------------------------------------------------------------------------
 
