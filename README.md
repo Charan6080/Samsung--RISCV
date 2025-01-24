@@ -363,7 +363,7 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	<img src="https://github.com/Charan6080/Samsung--RISCV/blob/main/TASK%204/ADDI_(r12%2Cr4%2C5).jpg">
 <b><i>Instruction 2:</i></b><pre> ADD R6, R2, R1</pre>
 	<p>Values of registers R2 and R1 are Added and stores the result in register R6, In this case 1 + 2 = 3.</p>
-	<img src="https://github.com/Charan6080/Samsung--RISCV/blob/main/TASK%204/Instructions.png">
+	<img src="https://github.com/Charan6080/Samsung--RISCV/blob/main/TASK%204/ADD_(r6%2Cr2%2Cr1).jpg">
 <br><br><b><i>Instruction 3:</i></b><pre> AND R8, R1, R3</pre>
 	<p> It executes bitwise "AND" between values of registers R1 and R3 and stores the result in register R8, In this case 01 & 11 = 01(1 in decimal).</p>
 	<img src="https://github.com/Charan6080/Samsung--RISCV/blob/main/TASK%204/AND_(r8%2Cr1%2Cr3).jpg">
