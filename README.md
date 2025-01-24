@@ -198,7 +198,7 @@ immediate offset. The address is relative to the current program counter.
 
 32-bit instruction encoding for the 15 unique RISC-V instructions extracted from the objdump.
 
-1. lui(Load Upper Immediate)
+### 1. lui(Load Upper Immediate)
 - Instruction: lui a0, 0x2b
 - Format: U-type
 - Fields:
@@ -207,7 +207,7 @@ immediate offset. The address is relative to the current program counter.
 - opcode: 0110111 (for lui)
 - 32-bit Hexadecimal: 0x002b537
 
-3. addi (Add Immediate)
+### 2. addi (Add Immediate)
 - Instruction: addi sp, sp, -32
 - Format: I-type
 -  Fields:
@@ -218,7 +218,7 @@ immediate offset. The address is relative to the current program counter.
 - opcode: 0010011 (for addi)
 - 32-bit Hexadecimal: 0xfe010113
 
-4. sd (Store Doubleword)
+### 3. sd (Store Doubleword)
  - Instruction: sd ra, 24(sp)
  - Format: S-type
  - Fields:
@@ -230,7 +230,7 @@ immediate offset. The address is relative to the current program counter.
  - opcode: 0100011 (for store)
  - 32-bit Hexadecimal: 0x00350513
 
-5. jal (Jump and Link)
+### 4. jal (Jump and Link)
 - Instruction: jal ra, 0x10438
 - Format: J-type
 - Fields:
@@ -242,7 +242,7 @@ immediate offset. The address is relative to the current program counter.
 - opcode: 1101111 (for jump)
 - 32-bit Hexadecimal: 0x35000ef
 
-6. lw (Load Word)
+### 5. lw (Load Word)
 - Instruction: lw a1, 12(sp)
 -  Format: I-type
 -  Fields: imm[11:0]: 000000001100 (12 in binary)
@@ -252,7 +252,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 0000011 (for load)
 -  32-bit Hexadecimal: 0x00c52083
 
-7. andi (AND Immediate)
+### 6. andi (AND Immediate)
 -  Instruction: andi a5, a1, 1
 -  Format: I-type
 -  Fields:
@@ -263,7 +263,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 0010011 (for ANDI)
 -  32-bit Hexadecimal: 0x00157913
 
-8. bnez (Branch Not Equal Zero)
+### 7. bnez (Branch Not Equal Zero)
 -  Instruction: bnez a5, 0x100fc
 -  Format: B-type
 -  Fields:
@@ -277,7 +277,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 1100011
 -  32-bit Hexadecimal: 0x02706e63
 
-9. ret (Return from Subroutine)
+### 8. ret (Return from Subroutine)
 -  Instruction: ret
 -  Format: I-type (special case of jalr)
 -  Fields:
@@ -288,7 +288,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 1100111 (for JALR)
 -  32-bit Hexadecimal: 0x00008067
 
-10. auipc (Add Upper Immediate to PC)
+### 9. auipc (Add Upper Immediate to PC)
 -  Instruction: auipc a5, 0xfff
 -  Format: U-type
 -  Fields:
@@ -297,7 +297,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 0010111
 -  32-bit Hexadecimal: 0x0fff057
 
-11. ld (Load Doubleword)
+### 10. ld (Load Doubleword)
 -  Instruction: ld ra, 24(sp)
 -  Format: I-type
 -  Fields:
@@ -308,7 +308,7 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 0000011
 -  32-bit Hexadecimal: 0x01852083
 
-12. jalr (Jump and Link Register)
+### 11. jalr (Jump and Link Register)
 -  Instruction: jalr ra, 0(a0)
 -  Format: I-type
 -  Fields:
@@ -319,12 +319,12 @@ immediate offset. The address is relative to the current program counter.
 -  opcode: 1100111
 -  32-bit Hexadecimal: 0x000280e7
 
-13. beqz (Branch Equal Zero)
+### 12. beqz (Branch Equal Zero)
 -  Instruction: beqz a5, 0x10120
 -  Format: B-type
 -  Encoding: Similar to bnez but with funct3 = 000 (BEQ).
 
-14. add (Add Registers)
+### 13. add (Add Registers)
 -  Instruction: add a0, sp, zero
 -  Format: R-type
 -  Fields:
@@ -335,3 +335,4 @@ immediate offset. The address is relative to the current program counter.
 -  rd: 01010 (a0)
 -  opcode: 0110011
 -  32-bit Hexadecimal: 0x00004533
+  
