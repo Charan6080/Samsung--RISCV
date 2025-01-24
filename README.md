@@ -335,4 +335,21 @@ immediate offset. The address is relative to the current program counter.
 -  rd: 01010 (a0)
 -  opcode: 0110011
 -  32-bit Hexadecimal: 0x00004533
-  
+</details>
+
+
+----------------------------------------------------------------------------------------------------------------
+
+<details><summary><b>Task 4 : </b> Functional Simulation of RISC-V Core</summary>
+<h3>Steps to perform functional simulation for RISC-V : </h3>
+1. Install the iverilog and GTKWave in ubuntu.<br>
+2. Compile the RISC-V Core: Verilog netlist and Testbench.<br>
+3. Observe the waveform output in GTKWave window.<br>
+
+<h3>Install iverilog and GTKWave in Ubuntu : </h3>
+<pre><code>sudo apt install iverilog gtkwave</code></pre>
+<h3>Simulate and run the verilog code : </h3>
+<pre><code>iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+./iiitb_rv32i
+gtkwave iiitb_rv32i.vcd</code></pre>
+
