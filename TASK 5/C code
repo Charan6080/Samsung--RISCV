@@ -2,35 +2,37 @@
 #include <debug.h>
 
 int xor(int bit1, int bit2) {
-    return bit1 ^ bit2;  
+    return bit1 ^ bit2;  // Perform XOR operation
 }
 
+// GPIO Configuration Function
 void GPIO_Config(void) {
-    GPIO_InitTypeDef GPIO_InitStructure = {0};
-
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); 
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; 
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // Enable clock for Port D
 
     // Configure input pins (Binary Input: B2, B1, B0)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6; // Input Pins
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Pull-up input mode
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; // Speed configuration
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);
 
     // Configure output pins (Gray Output: G2, G1, G0)
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3; // Output Pins
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; // Push-pull output mode
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3; 
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);
 }
 
+// Main Function
 int main(void) {
     uint8_t b0, b1, b2, g0, g1, g2 = 0;
 
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 
-    SystemCoreClockUpdate(); 
-    Delay_Init(); 
-    GPIO_Config();
+   
+    SystemCoreClockUpdate(); // Update system clock
+    Delay_Init(); // Initialize delay functions
+    GPIO_Config(); // Call GPIO configuration function
 
     while (1) {
+        // Read Binary Input (B2, B1, B0)
         b2 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_4);
         b1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_5);
         b0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_6);
